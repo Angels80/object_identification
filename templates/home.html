@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>mywebapp</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+        body{
+            text-align:center;
+            margin-top:18%;
+        }
+        h2{
+            color:white;
+
+            
+        }
+        input{
+            background:lightblue;
+            padding:1%;
+            border-radius:5px;
+            color:white;
+        }
+        </style>
+
+    </head>
+    <body style="background-image:url('{% static "img/image.jpg" %}');">
+        <h2>Please pick an image </br> I will predict What that image is!!! </h3>
+
+        <form action="imageupload/imageprocess" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input id="image" type="file" name="image"/>
+        <input type="submit" value="submit">
+        </form>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script src="" async defer></script>
+    </body>
+</html>
